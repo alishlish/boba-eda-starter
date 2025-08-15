@@ -1,0 +1,17 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# Data
+data/*
+!data/.gitkeep
+
+# Envs / OS
+.env
+.venv/
+.DS_Store
+
+# Outputs
+assets/*.html
+assets/*.png
