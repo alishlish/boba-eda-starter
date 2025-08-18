@@ -15,3 +15,7 @@ data/*
 # Outputs
 assets/*.html
 !bayarea_boba_spots.csv
+
+# allow datasets for CI
+!data/*.csv
+!data/bayarea_boba_spots.csv
