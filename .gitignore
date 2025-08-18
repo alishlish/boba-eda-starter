@@ -14,4 +14,4 @@ data/*
 
 # Outputs
 assets/*.html
-assets/*.png
+!bayarea_boba_spots.csv
