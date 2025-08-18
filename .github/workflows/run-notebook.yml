@@ -4,21 +4,41 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Execute EDA notebook (smoke test)
+          # ensure these are present for CI exec
+          pip install nbclient nbformat ipykernel
+
+      - name: Execute notebook headlessly
+        env:
+          MPLBACKEND: Agg   # non-GUI backend so plt.savefig works
         run: |
-          pip install nbconvert nbclient
-          jupyter nbconvert --to notebook --execute notebooks/eda.ipynb --output /tmp/out.ipynb
+          python - <<'PY'
+          import nbformat
+          from nbclient import NotebookClient
+          nb = nbformat.read("notebooks/eda.ipynb", as_version=4)
+          # let errors bubble to fail the job; bump timeout if needed
+          client = NotebookClient(
+              nb,
+              timeout=900,
+              kernel_name="python3",
+              allow_errors=False
+          )
+          client.execute()
+          nbformat.write(nb, "notebooks/eda_executed.ipynb")
+          print("✅ Notebook executed & saved as notebooks/eda_executed.ipynb")
+          PY
