@@ -1,9 +1,20 @@
+# core
 pandas==2.2.2
 numpy==1.26.4
+
+# plotting
 matplotlib==3.8.4
 seaborn==0.13.2
 folium==0.16.0
-scikit-learn==1.4.2
-jupyterlab==4.2.1
-statsmodels==0.14.2
 
+# ml
+scikit-learn==1.4.2
+
+# stats + formulas
+scipy==1.11.4
+statsmodels==0.14.2
+patsy==0.5.6
+
+# nb execution for GitHub Actions
+nbconvert==7.16.6
+nbclient==0.10.2
