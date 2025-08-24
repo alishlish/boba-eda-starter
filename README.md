@@ -32,13 +32,13 @@ nn_xmi → count of neighbors within 0.5, 1.0, and 2.0 miles
 
 ## **Methods**
 
-1. Exploratory Analysis
+### 1. Exploratory Analysis
 
 City-level shop counts and rating distributions
 
 Visualizations of top cities and shop clusters
 
-2. Clustering (k-Means)
+### 2. Clustering (k-Means)
 
 Tested k=2–10, compared with silhouette scores
 
@@ -46,7 +46,7 @@ Revealed macro, meso, and micro structure of the market
 
 Identified high-performing hubs (SF, SJ, Palo Alto) vs oversaturated zones (Santa Clara, Dublin)
 
-3. Hypothesis Testing
+### 3. Hypothesis Testing
 
 Welch’s t-tests for binary factors (urban, chain, campus proximity)
 
@@ -75,6 +75,40 @@ Best bets: SF, San Jose, and Palo Alto remain strong, premium clusters.
 Watch out: Santa Clara & Dublin show oversupply with weaker averages.
 
 Differentiation matters: Independent shops have a reputational edge — quality and uniqueness pay off.
+
+## **Next Steps**
+
+This project focused on shop ratings, competition, and basic location signals. To make it even more actionable, the following extensions would strengthen insights:
+
+### 1. Pricing & Menu Data
+
+Scrape menu prices and product offerings (milk tea vs fruit tea vs toppings).
+
+Test whether higher-priced shops correlate with higher ratings, or if affordability drives volume.
+
+### 2. Sentiment Analysis of Reviews
+
+Use NLP on Yelp review text to extract themes (service, taste, ambiance).
+
+Link those themes to rating differences to uncover why shops perform better.
+
+### 3. Temporal Dynamics
+
+If review timestamps are available, analyze trends over time (e.g., Do ratings decline as shops scale?).
+
+### 4. Customer Demographics & Foot Traffic
+
+Incorporate census and mobility data for neighborhoods.
+
+Identify whether ratings align with income levels, age distribution, or cultural density.
+
+### 5. Predictive Modeling
+
+Build a model to predict whether a new shop (given location + chain status + proximity to campus/competitors) would likely be above or below 4.0 stars.
+
+### 6. Expansion Simulation
+
+Run “what-if” experiments: if a new shop opens in Fremont vs Palo Alto, how might the local density vs. quality balance shift?
 
 ## **Tech Stack**
 
