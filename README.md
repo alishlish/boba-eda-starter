@@ -2,7 +2,7 @@
 
 > Exploring pricing, ratings, and location patterns across Bay Area boba shops.
 
-![sample](assets/hero.png)
+![Top 10 Bay Area Cities by Number of Boba Shops](assets/top_cities.png)
 
 ## **Overview**
 
